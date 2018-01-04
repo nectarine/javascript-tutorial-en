@@ -72,50 +72,49 @@
 
     이것을 "동일 출처 정책"이라고 합니다. 이것을 피하기 위해서는 *양쪽의 페이지 모두* 데이터 교환을 처리하는 특수한 자바스크립트 코드를 포함해야합니다.
 
-    이 제약은 역은 사용자의 안전을 위해서입니다. 사용자가 `http://anysite.com`를 통하여 연 페이지는 `http://gmail.com` URL로 열린 다른 탭에 접근할 수 없어야하며, 그곳으로부터 정보를 훔칠 수 없어야합니다.
+    이 제약 역시 사용자의 안전을 위해서입니다. 사용자가 `http://anysite.com`를 통하여 연 페이지는 `http://gmail.com` URL로 열린 다른 탭에 접근할 수 없어야하며, 그곳으로부터 정보를 훔칠 수 없어야합니다.
 - 자바스크립트는 현재 페이지가 전달된 서버와 네트워크를 통하여 쉽게 통신할 수 있습니다. 그러나 다른 사이트/도메인으로부터 데이터를 전달받는 것은 문제가 발생합니다. 설사 가능하더라도, 명시적인 합의 (HTTP 헤더에 표현된)가 원격부에서 필요합니다. 다시 한번, 이것은 안전 제약입니다.
 
 ![](limitations.png)
 
 이러한 제약은 자바스크립트가 브라우저밖에서 사용된다면 존재하지 않습니다. 서버에서 돌아갈 때처럼요. 현대의 브라우저들은 확장된 허가를 얻기 위해서 플러그인/확장모듈 설치를 허용합니다.
 
-## What makes JavaScript unique?
+## 무엇이 자바스크립트를 특별하게 만들까?
 
-There are at least *three* great things about JavaScript:
+자바스크립트는 최소 *세가지* 놀라운 점이 있습니다:
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things done simply.
-+ Supported by all major browsers and enabled by default.
++ HTML/CSS와의 완전한 통합.
++ 간단한 일은 간단하게 해결.
++ 대부분 주요 브라우저들에서 지원되며 기본으로 활성화되어있음.
 ```
 
-Combined, these three things exist only in JavaScript and no other browser technology.
+조합하면, 이 세가지는 다른 브라우저 기술에는 존재하지않고 오직 자바스크립트에서만 가능합니다.
 
-That's what makes JavaScript unique. That's why it's the most widespread tool to create browser interfaces.
+이것이 자바스크립트를 특별하게 만듭니다. 이것이 자바스크립트가 브라우저 인터페이스를 만들기 위해 가장 널리 퍼져있는 도구인 이유입니다.
 
-While planning to learn a new technology, it's beneficial to check its perspectives. So let's move on to the modern trends that include new languages and browser abilities.
+새로운 기술을 배우기를 계획하는 동안, 이러한 관점을 확인하는 것이 유익할 것입니다. 이제 새로운 언어와 브라우저 기능을 포함한 현대의 추세에 대해 알아봅시다.
 
+## 자바스크립트 "위의" 언어들
 
-## Languages "over" JavaScript
+자바스크립트의 문법은 모든 사람의 요구를 충족시키지 못합니다. 사람마다 다른 기능을 원하죠.
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+사람마다 프로젝트와 요구사항이 다른 것처럼 당연한 일입니다.
 
-That's to be expected, because projects and requirements are different for everyone.
+그래서 최근에는 브라우저에서 실행되기 전에 코드가 자바스크립트로 *트랜스파일* (변환)되는 언어들이 넘쳐나기 시작했습니다.
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+현대의 도구들은 이러한 변환을 굉장히 빠르고 투명하게 수행합니다. 개발자들이 다른 언어로 코드를 작성하면, "그 속에서" 자동 변환이 되도록 허용하는 것이죠.
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and autoconverting it "under the hood".
+이러한 언어들로는:
 
-Examples of such languages:
+- [CoffeeScript](http://coffeescript.org/)는 자바스크립트의 "문법 설탕"입니다. 더 짧은 문법을 도입하고 정확하고 간결한 코드를 작성할 수 있도록 합니다. 일반적으로 루비 개발자들이 좋아합니다.
+- [TypeScript](http://www.typescriptlang.org/)는 "정적 데이터 타입"을 추가하는 것에 집중합니다. 이를 통해 개발을 단순화하고 복잡한 시스템을 설계할 수 있도록 합니다. 마이크로소프트가 만들었습니다.
+- [Dart](https://www.dartlang.org/)은 브라우저가 아닌 환경 (모바일 앱 같은)에서 실행되는 자기만의 엔진을 가진 독립적인 언어입니다. 최초에는 구글에 의해 자바스크립트를 대체하기 위해서 제공되었으나, 지금은 위의 것들과 같이 브라우저 위에서 실행하기 위해서는 자바스크립트로 변환하는 과정이 필요합니다.
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript, it introduces shorter syntax, allowing to write more precise and clear code. Usually Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing", to simplify development and support of complex systems. It is developed by Microsoft.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps). It was initially offered by Google as a replacement for JavaScript, but as of now, browsers require it to be transpiled to JavaScript just like the ones above.
+이 외에도 더 많은 것들이 있습니다. 당연하지만 위와 같은 언어를 사용하더라도 우리는 실제로 무엇을 하는지 이해하기 위해서 자바스크립트를 알아야합니다.
 
-There are more. Of course even if we use one of those languages, we should also know JavaScript, to really understand what we're doing.
+## 요약
 
-## Summary
-
-- JavaScript was initially created as a browser-only language, but now it is used in many other environments as well.
-- At this moment, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- 자바스크립트는 최초에는 브라우저에서만 사용되도록 만들어졌으나, 이제는 다른 많은 환경에서도 사용됩니다.
+- 지금 시점에서는, 자바스크립트는 HTML/CSS와 완전하게 통합되어있는 가장 널리 사용되는 브라우저 언어로 자리매김하고 있습니다.
+- 새로운 기능들을 제공하고 자바스크립트로 "트랜스파일"되는 많은 언어들이 있습니다. 자바스크립트에 능숙해지면 간단하게라도 그런 언어들을 살펴보는 것을 권장합니다.
