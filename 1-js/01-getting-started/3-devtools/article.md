@@ -1,60 +1,59 @@
-# Developer console
+# 개발자 콘솔
 
-Code is prone to errors. You are quite likely to make errors... Oh, what am I talking about? You are *absolutely* going to make errors, at least if you're a human, not a [robot](https://en.wikipedia.org/wiki/Bender_(Futurama)).
+코드는 에러를 만들기 쉽습니다. 당신도 자주 에러를 만들 것이구요.... 제가 뭐라고 했습니까? 당신은 *반드시* 에러를 만들 것입니다. 당신이 사람인 이상은요, [로봇](https://en.wikipedia.org/wiki/Bender_(Futurama))이 아니라.
 
-But in the browser, a user doesn't see the errors by default. So, if something goes wrong in the script, we won't see what's broken and can't fix it.
+그러나 브라우저에서는 사용자는 기본적으로 에어를 볼 수 없습니다. 그래서 무언가 스크립트에 잘못된 것이 있다면, 무엇이 망가졌는지 알 수 없고 고칠 수도 없습니다.
 
-To see errors and get a lot of other useful information about scripts, browsers have embedded "developer tools".
+에러를 확인하고 스크립트에 관련된 다른 유용한 정보를 얻기 위해서, 브라우저는 "개발자 도구"를 탑재하고 있습니다.
 
-Most often developers lean towards Chrome or Firefox for development, because those browsers have the best developer tools. Other browsers also provide developer tools, sometimes with special features, but are usually playing "catch-up" to Chrome or Firefox. So most people have a "favorite" browser and switch to others if a problem is browser-specific.
+대다수의 개발자들은 개발시에는 크롬이나 파이어폭스를 주로 사용합니다. 그 브라우저들이 최고의 개발자 도구를 가지고 있기 때문입니다. 다른 브라우저들도 개발자 도구를 제공하지만 (때로는 더 특별한 기능까지), 대부분은 크롬이나 파이어폭스를 따라잡는 수준입니다. 그래서 대부분은 "제일 선호하는" 브라우저가 있고, 특정 브라우저에서 문제가 발생할 경우 그 브라우저로 전환힙니다.
 
-Developer tools are really powerful, there are many features. To start, we'll learn how to open them, look at errors and run JavaScript commands.
+개발자 도구는 매우 강력하며, 많은 기능이 있습니다. 이제 어떻게 그것을 여는지 알아보고 에러를 살펴본 후 자바스크립트 명령을 실행해보겠습니다.
 
 [cut]
 
-## Google Chrome
+## 구글 크롬
 
-Open the page [bug.html](bug.html).
+[bug.html](bug.html) 페이지를 열어보세요.
 
-There's an error in the JavaScript code on it. It's hidden from a regular visitor's eyes, so let's open developer tools to see it.
+그 속에 있는 자바스크립트 코드에는 에러가 있습니다. 일반적인 방문자의 눈에는 보이지 않으므로, 개발자 도구를 열어 보도록 합시다.
 
-Press `key:F12` or, if you're on Mac, then `key:Cmd+Opt+J`.
+`key:F12`를 누르거나, 맥이라면 `key:Cmd+Opt+J`를 누르세요.
 
-The developer tools will open on the Console tab by default.
+개발자 도구가 콘솔 탭을 기본으로 해서 열릴 것입니다.
 
-It looks somewhat like this:
+아래와 같이 생겼습니다.:
 
 ![chrome](chrome.png)
 
-The exact look of developer tools depends on your version of Chrome. It changes from time to time, but should be similar.
+개발자 도구의 정확한 모습은 크롬 버전에 달렸습니다. 시간이 지나면서 계속 바뀌었으나, 비슷하게 생겼을 것입니다.
 
-- Here we can see the red-colored error message. In this case the script contains an unknown "lalala" command.
-- On the right, there is a clickable link to the source `bug.html:12` with the line number where the error has occurred.
+- 여기 빨간색의 에러 메시지를 볼 수 있습니다. 이 경우에는 스크립트가 알 수 없는 "lalala" 명령을 포함하고 있습니다.
+- 오른쪽에는 `bug.html:12`로 이동할 수 있는 에러가 발생한 줄 번호를 포함한 클릭 가능한 링크가 있습니다.
 
-Below the error message there is a blue `>` symbol. It marks a "command line" where we can type JavaScript commands and press `key:Enter` to run them (`key:Shift+Enter` to input multi-line commands).
+에러 아래에는 파란 `>` 기호가 있습니다. 이것은 자바스크립트 명령을 입력하고 `key:Enter`를 눌러 실행(여러 줄을 입력하려면 `key:Shift+Enter`)할 수 있는 "명령줄"을 표시하는 것입니다.
 
-Now we can see errors and that's enough for the start. We'll be back to developer tools later and cover debugging more in-depth in the chapter <info:debugging-chrome>.
+이제 에러를 확인하였으니 시작으로는 충분합니다. 개발자 도구는 나중에 또 살펴보도록 하고 <info:debugging-chrome>장에서 디버깅하는 방법을 더 자세히 다루겠습니다.
 
+## 파이어폭스, 엣지, 그 외
 
-## Firefox, Edge and others
+대부분의 다른 브라우저들도 개발자 도구를 열기 위해 `key:F12`를 사용합니다.
 
-Most other browsers use `key:F12` to open developer tools.
+보는 느낌이 상당히 비슷할 것입니다. 한번 사용하는 방법을 알면 (크롬으로 시작해도 됩니다), 다른 브라우저로 쉽게 전환할 수 있습니다.
 
-The look & feel of them is quite similar. Once you know how to use one of them (you can start with Chrome), you can easily switch to another.
+## 사파리
 
-## Safari
+사파리 (맥 브라우저, 윈도우/리눅스 지원안함)는 조금 특별합니다. "개발자 메뉴"를 먼저 활성화해야합니다.
 
-Safari (Mac browser, not supported by Windows/Linux) is a little bit special here. We need to enable the "Develop menu" first.
-
-Open Preferences and go to "Advanced" pane. There's a checkbox at the bottom:
+환경설정을 열어 "고급" 창으로 이동합니다. 하단에 체크박스가 있습니다.:
 
 ![safari](safari.png)
 
-Now `key:Cmd+Opt+C` can toggle the console. Also note that the new top menu item named "Develop" has appeared. It has many commands and options.
+이제 `key:Cmd+Opt+C`로 콘솔을 토글할 수 있습니다. 또한 상단 메뉴에 "개발자용" 이라는 항목이 생겼음을  확인할 수 있습니다. 여기에 여러가지 명령이나 옵션들이 있습니다.
 
-## Summary
+## 요약
 
-- Developer tools allow us to see errors, run commands, examine variables and much more.
-- They can be opened with `key:F12` for most browsers under Windows. Chrome for Mac needs `key:Cmd+Opt+J`, Safari: `key:Cmd+Opt+C` (need to enable first).
+- 개발자 도구는 우리가 에러를 확인하고, 명령을 실행하며, 변수를 시험하는 등의 일을 할 수 있게 합니다.
+- 대부분의 브라우저들은 윈도우에서은 `key:F12`로 열 수 있습니다. 맥용 크롬에서는 `key:Cmd+Opt+J`를 입력해야하며, 사파리에서는 `key:Cmd+Opt+C`를 입력해야합니다.(먼저 활성화해야합니다).
 
-Now we have the environment ready. In the next section we'll get down to JavaScript.
+이제 환경이 준비되었습니다. 다음 절에서는 자바스크립트를 살펴보겠습니다.
