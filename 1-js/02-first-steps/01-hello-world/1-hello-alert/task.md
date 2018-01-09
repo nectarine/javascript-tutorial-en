@@ -1,12 +1,12 @@
-importance: 5
+중요도: 5
 
 ---
 
-# Show an alert
+# 경고를 출력하세요.
 
-Create a page that shows a message "I'm JavaScript!".
+"I'm JavaScript!"를 출력하는 페이지를 만들어보세요.
 
-Do it in a sandbox, or on your hard drive, doesn't matter, just ensure that it works.
+샌드박스 환경에서 하든, 로컬 하드 드라이브에서 하든 상관없습니다. 동작만 하면 됩니다.
 
 [demo src="solution"]
 

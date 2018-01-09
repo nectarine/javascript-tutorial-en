@@ -1,9 +1,9 @@
-importance: 5
+중요도: 5
 
 ---
 
-# Show an alert with an external script
+# 외부 스크립트에서 경고를 출력하세요.
 
-Take the solution of the previous task <info:task/hello-alert>. Modify it by extracting the script content into an external file `alert.js`, residing in the same folder.
+이전 과제 <info:task/hello-alert>의 해답을 다시 사용합니다. 스크립트의 내용을 추출하여 외부 파일 `alert.js` 로 저장하세요. 동일한 폴더에 위치해야합니다.
 
-Open the page, ensure that the alert works.
+페이지를 열어, 경고가 동작하는지 확인해보세요.
